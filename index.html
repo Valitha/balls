@@ -19,7 +19,6 @@
     </style>
 </head>
 <body>
-    <canvas id="simulationCanvas"></canvas>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
     <script>
         let balls = [];
@@ -58,7 +57,7 @@
                 if (rect.pos.x < 0 || rect.pos.x + rect.size.x > width) {
                     rect.velocity.x *= -1;
                 }
-                rect(pos.x, pos.y, rect.size.x, rect.size.y);
+                rect(rect.pos.x, rect.pos.y, rect.size.x, rect.size.y);
             });
             smallRects.forEach(rect => {
                 rect.pos.add(rect.velocity);
